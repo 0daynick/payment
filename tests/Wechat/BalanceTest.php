@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: overnic
- * Date: 2018/10/27
- * Time: 19:28
- */
 namespace OverNick\Payment\Tests\Wechat;
 
 use OverNick\Payment\Kernel\Tools\PayCode;

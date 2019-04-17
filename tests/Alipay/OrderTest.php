@@ -1,13 +1,7 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: overnic
- * Date: 2018/4/18
- * Time: 15:15
- */
 namespace OverNick\Payment\Tests\Alipay;
 
-use OverNick\Payment\PaymentManage;
+use OverNick\Payment\Kernel\Tools\PayCode;
 use OverNick\Payment\Tests\BaseTestCase;
 
 /**
@@ -19,7 +13,7 @@ class OrderTest extends BaseTestCase
     // 商户订单号
     protected $order_no = '20190404001101';
 
-    protected $driver = PaymentManage::DRIVER_ALIPAY;
+    protected $driver = PayCode::DRIVER_ALIPAY;
 
     /**
      * 统一下单

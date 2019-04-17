@@ -16,6 +16,7 @@ use OverNick\Support\Arr;
  * 微信支付
  *
  * Class WechatPayApp
+ *
  * @property \GuzzleHttp\Client                         $http_client
  * @property \OverNick\Support\Config                   $config
  * @property \OverNick\Payment\Wechat\Order\Client      $order

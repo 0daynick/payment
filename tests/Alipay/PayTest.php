@@ -1,13 +1,7 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: overnic
- * Date: 2018/4/18
- * Time: 15:04
- */
 namespace OverNick\Payment\Tests\Alipay;
 
-use OverNick\Payment\PaymentManage;
+use OverNick\Payment\Kernel\Tools\PayCode;
 use OverNick\Payment\Tests\BaseTestCase as TestCase;
 
 /**
@@ -16,7 +10,7 @@ use OverNick\Payment\Tests\BaseTestCase as TestCase;
  */
 class PayTest extends TestCase
 {
-    protected $driver = PaymentManage::DRIVER_ALIPAY;
+    protected $driver = PayCode::DRIVER_ALIPAY;
 
     /**
      * 移动端支付
