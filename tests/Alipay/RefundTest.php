@@ -1,14 +1,7 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: overnic
- * Date: 2018/4/18
- * Time: 15:16
- */
-
 namespace OverNick\Payment\Tests\Alipay;
 
-use OverNick\Payment\PaymentManage;
+use OverNick\Payment\Kernel\Tools\PayCode;
 use OverNick\Payment\Tests\BaseTestCase;
 
 class RefundTest extends BaseTestCase
@@ -19,7 +12,7 @@ class RefundTest extends BaseTestCase
     // 商户退单号
     protected $out_request_no = 'R20190505001101';
 
-    protected $driver = PaymentManage::DRIVER_ALIPAY;
+    protected $driver = PayCode::DRIVER_ALIPAY;
 
     /**
      * 创建退款
