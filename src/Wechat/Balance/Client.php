@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: overnic
- * Date: 2018/10/27
- * Time: 19:02
- */
 namespace OverNick\Payment\Wechat\Balance;
 
 

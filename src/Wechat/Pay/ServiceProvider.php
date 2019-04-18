@@ -1,11 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: overnic
- * Date: 2018/4/17
- * Time: 15:21
- */
-
 namespace OverNick\Payment\Wechat\Pay;
 
 use Pimple\Container;

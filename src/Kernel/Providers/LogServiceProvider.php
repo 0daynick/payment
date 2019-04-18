@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: overnic
- * Date: 2018/4/12
- * Time: 17:26
- */
 namespace OverNick\Payment\Kernel\Providers;
 
 use Monolog\Logger;

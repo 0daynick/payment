@@ -13,9 +13,9 @@ use OverNick\Payment\Kernel\Tools\Xml;
 class Refunded extends Handler
 {
     /**
-     *
      * @param Closure $closure
-     * @return \Symfony\Component\HttpFoundation\Response
+     * @return mixed|\Symfony\Component\HttpFoundation\Response
+     * @throws Exception
      */
     public function handle(Closure $closure)
     {

@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: overnic
- * Date: 2018/4/18
- * Time: 14:04
- */
 namespace OverNick\Payment\Alipay\Refund;
 
 use Pimple\Container;

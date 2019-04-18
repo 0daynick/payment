@@ -1,11 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: overnic
- * Date: 2018/11/9
- * Time: 15:16
- */
-
 namespace OverNick\Payment\Kernel\Tools;
 
 /**

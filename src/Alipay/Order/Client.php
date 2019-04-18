@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: overnic
- * Date: 2018/4/17
- * Time: 16:51
- */
 namespace OverNick\Payment\Alipay\Order;
 
 use OverNick\Payment\Alipay\AlipayBaseClient;
@@ -29,8 +23,6 @@ class Client extends AlipayBaseClient implements OrderInterface
     {
         $params['method'] = 'alipay.trade.create';
 
-        $this->buildNotifyUrl($params);
-
         return $this->request($params);
     }
 
@@ -44,8 +36,6 @@ class Client extends AlipayBaseClient implements OrderInterface
     public function preCreate(array $params = [])
     {
         $params['method'] = 'alipay.trade.precreate';
-
-        $this->buildNotifyUrl($params);
 
         return $this->request($params);
     }

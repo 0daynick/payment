@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: overnic
- * Date: 2018/4/17
- * Time: 14:38
- */
 namespace OverNick\Payment\Wechat\Refund;
 
 use function foo\func;

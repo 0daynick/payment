@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: overnic
- * Date: 2018/4/12
- * Time: 18:09
- */
 namespace OverNick\Payment\Wechat\Order;
 
 use OverNick\Payment\Wechat\WechatBaseClient;
@@ -31,8 +25,6 @@ class Client extends WechatBaseClient implements OrderInterface
         if (empty($params['spbill_create_ip'])) {
             $params['spbill_create_ip'] = ('NATIVE' === $params['trade_type']) ? get_server_ip() : get_client_ip();
         }
-
-        $params['notify_url'] = $params['notify_url'] ?: $this->app->config->get('notify_url');
 
         $result = $this->rawRequest($this->warp('pay/unifiedorder'), $params);
 
