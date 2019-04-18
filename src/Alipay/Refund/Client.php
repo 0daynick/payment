@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: overnic
- * Date: 2018/4/18
- * Time: 13:57
- */
 namespace OverNick\Payment\Alipay\Refund;
 
 use OverNick\Payment\Alipay\AlipayBaseClient;

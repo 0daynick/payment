@@ -1,11 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: overnic
- * Date: 2018/11/9
- * Time: 14:55
- */
-
 namespace OverNick\Payment\Alipay\Balance;
 
 

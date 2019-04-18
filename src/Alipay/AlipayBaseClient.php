@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: overnic
- * Date: 2018/4/17
- * Time: 16:52
- */
 namespace OverNick\Payment\Alipay;
 
 use OverNick\Payment\Kernel\ServiceContainer;
@@ -13,7 +7,7 @@ use OverNick\Support\Arr;
 
 /**
  * Class AlipayBaseClient
- * @package OverNick\Payment\Kernel\Client
+ * @package OverNick\Payment\Alipay
  */
 class AlipayBaseClient
 {
@@ -62,13 +56,14 @@ class AlipayBaseClient
      * @param array $params
      * @param string $method
      * @param array $options
-     * @return array
+     * @return mixed
      */
     protected function request(array $params, $method = 'POST',array $options = [])
     {
         $params = $this->buildPrams($params);
 
         $options = array_merge($options, [
+            'http_errors' => false,
             'verify' => false,
             'form_params' => $params
         ]);
@@ -117,16 +112,6 @@ class AlipayBaseClient
         $params['sign'] = $this->app->getSign($params, $this->app->config->get('sign_type'));
 
         return $params;
-    }
-
-    /**
-     * @param $params
-     */
-    protected function buildNotifyUrl(&$params)
-    {
-        if(!isset($params['notify_url'])){
-            $params['notify_url'] = $this->app->config->get('notify_url');
-        }
     }
 
     /**

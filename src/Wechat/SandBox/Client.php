@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: overnic
- * Date: 2018/4/20
- * Time: 16:32
- */
 namespace OverNick\Payment\Wechat\SandBox;
 
 use Exception;

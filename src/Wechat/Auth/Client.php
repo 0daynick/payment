@@ -1,11 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: overnic
- * Date: 2018/7/24
- * Time: 11:59
- */
-
 namespace OverNick\Payment\Wechat\Auth;
 
 
@@ -19,7 +12,6 @@ use OverNick\Payment\Wechat\WechatBaseClient;
  */
 class Client extends WechatBaseClient
 {
-
     /**
      * 获取微信认证Url
      *
@@ -48,7 +40,7 @@ class Client extends WechatBaseClient
      * 获取小程序的token
      *
      * @param $code
-     * @return mixed
+     * @return array
      */
     public function miniToken($code)
     {

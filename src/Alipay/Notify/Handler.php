@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: overnic
- * Date: 2018/4/20
- * Time: 17:15
- */
 namespace OverNick\Payment\Alipay\Notify;
 
 use Closure;
