@@ -3,6 +3,7 @@ namespace OverNick\Payment\Alipay;
 
 use Closure;
 use OverNick\Payment\Kernel\ServiceContainer;
+use OverNick\Support\Arr;
 
 /**
  * 阿里支付
@@ -96,5 +97,14 @@ class AliPayApp extends ServiceContainer
         }
 
         return $result;
+    }
+
+    /**
+     * @param $result
+     * @return bool
+     */
+    public function hasSuccess($result)
+    {
+        return Arr::get($result, 'code') == 10000;
     }
 }
