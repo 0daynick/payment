@@ -6,6 +6,7 @@ use Closure;
 use InvalidArgumentException;
 use OverNick\Payment\Kernel\NotifyAbstract;
 use OverNick\Payment\Kernel\Tools\Xml;
+use OverNick\Support\Arr;
 use Symfony\Component\HttpFoundation\Response;
 
 /**
@@ -87,7 +88,8 @@ abstract class Handler extends NotifyAbstract
      */
     protected function validate(array $message)
     {
-        $sign = $message['sign'];
+        $sign = Arr::get($message, 'sign');
+
         unset($message['sign']);
 
         if ($this->app->getSign($message, $this->app->getKey()) !== $sign) {

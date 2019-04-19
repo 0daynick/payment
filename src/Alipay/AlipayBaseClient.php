@@ -70,9 +70,10 @@ class AlipayBaseClient
 
         $response = $this->getHttpClient()->request($method, $this->gateWay(), $options);
 
-        $result = $response->getBody()->getContents();
+        $result = json_decode(trim($this->enCodeToUtf8($response->getBody()->getContents())), true);
 
-        return json_decode(trim($this->enCodeToUtf8($result)),  true);
+        // 返回结果体，忽略sign和外层字段
+        return Arr::get($result, str_replace('.','_',$params['method']).'_response');
     }
 
     /**
