@@ -57,6 +57,8 @@ class Client extends AlipayBaseClient implements BaseInterface
     }
 
     /**
+     * App支付
+     *
      * @param array $params
      * @return mixed
      */
@@ -64,7 +66,7 @@ class Client extends AlipayBaseClient implements BaseInterface
     {
         $params['method'] = 'alipay.trade.wap.pay';
 
-        return $this->request($params);
+        return $this->buildUrl($params);
     }
 
 }
