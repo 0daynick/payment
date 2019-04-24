@@ -14,7 +14,7 @@ class Client extends WechatBaseClient
 {
 
     /**
-     * 转账
+     * 转账到微信账户
      * https://pay.weixin.qq.com/wiki/doc/api/tools/mch_pay.php?chapter=14_2
      *
      * @param array $params
@@ -42,15 +42,37 @@ class Client extends WechatBaseClient
     }
 
     /**
+     * 付款到银行卡
+     *
+     * @param array $params
+     * @return array
+     */
+    public function transferBank(array $params)
+    {
+        return $this->safeRequest($this->warp('mmpaysptrans/pay_bank'), $params);
+    }
+
+    /**
      * 查询企业付款
      * https://pay.weixin.qq.com/wiki/doc/api/tools/mch_pay.php?chapter=14_3
      *
      * @param array $params
      * @return array
      */
-    public function queryTransfers(array $params)
+    public function queryTransfer(array $params)
     {
-        return $this->safeRequest($this->warp('mmpaymkttransfers/gettransferinfo '), $params);
+        return $this->safeRequest($this->warp('mmpaymkttransfers/gettransferinfo'), $params);
+    }
+
+    /**
+     * 查询付款到银行卡
+     *
+     * @param $params
+     * @return array
+     */
+    public function queryTransferBank($params)
+    {
+        return $this->safeRequest($this->warp('mmpaysptrans/query_bank'), $params);
     }
 
     /**
@@ -59,9 +81,22 @@ class Client extends WechatBaseClient
      * @param $order
      * @return array
      */
-    public function queryTransfersByTradeNo($order)
+    public function queryTransferByTradeNo($order)
     {
-        return $this->queryTransfers([
+        return $this->queryTransfer([
+            'partner_trade_no' => $order
+        ]);
+    }
+
+    /**
+     * 通过订单号查询付款到银行卡
+     *
+     * @param $order
+     * @return array
+     */
+    public function queryTransferBankByTradeNo($order)
+    {
+        return $this->queryTransferBank([
             'partner_trade_no' => $order
         ]);
     }
